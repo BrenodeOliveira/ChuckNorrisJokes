@@ -7,15 +7,30 @@
     android:background="@drawable/background_gradient_button"
     tools:context=".ui.JokeActivity">
 
+    <TextView
+        android:id="@+id/tv_title_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/iv_io_chuck"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/iv_io_chuck"
+        app:layout_constraintStart_toStartOf="@id/iv_io_chuck" />
+
     <ImageView
         android:id="@+id/iv_io_chuck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="64dp"
+        android:layout_margin="32dp"
         android:src="@drawable/io_chuck_norris"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_category"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="64dp" />
 
     <TextView
         android:id="@+id/tv_joke_text"

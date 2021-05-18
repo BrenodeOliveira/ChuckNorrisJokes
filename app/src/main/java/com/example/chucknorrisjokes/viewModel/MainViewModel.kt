@@ -18,6 +18,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             override fun onResponse(call: Call<List<String>>, response: Response<List<String>>) {
                 if (response.isSuccessful) {
                     val fillingRv = response.body()
+
                     listCategoriesLiveData.value = fillingRv
                 }
             }

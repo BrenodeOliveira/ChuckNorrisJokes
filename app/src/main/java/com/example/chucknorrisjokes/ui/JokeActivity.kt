@@ -19,11 +19,12 @@ class JokeActivity : AppCompatActivity() {
 
         val categoryExtra = intent.getStringExtra("nameCategory").toString()
 
+        tv_title_category.text = categoryExtra
+
         viewModel = ViewModelProvider(this, viewModelFactory).get(JokeViewModel::class.java)
         viewModel.categoryString = categoryExtra
 
         initButtonGenerate()
-
     }
 
     private fun initButtonGenerate() {
