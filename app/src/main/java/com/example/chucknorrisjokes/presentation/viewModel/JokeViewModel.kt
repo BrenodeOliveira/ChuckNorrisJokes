@@ -1,21 +1,22 @@
-package com.example.chucknorrisjokes.viewModel
+package com.example.chucknorrisjokes.presentation.viewModel
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.chucknorrisjokes.data.model.Piada
 import com.example.chucknorrisjokes.data.retrofit.ApiService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class JokeViewModel(application: Application) : AndroidViewModel(application) {
+class JokeViewModel : ViewModel() {
 
     val listJokeLiveData: MutableLiveData<String> = MutableLiveData()
     lateinit var categoryString: String
 
-    fun genereteJoke() {
+    fun generateJoke() {
         ApiService.piadaService.callPiada(categoryString).enqueue(object : Callback<Piada> {
             override fun onResponse(call: Call<Piada>, response: Response<Piada>) {
                 var textPiada: String? = ""

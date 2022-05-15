@@ -9,13 +9,15 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:name=".di.Application"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChuckNorrisJokes">
-        <activity android:name=".ui.JokeActivity" />
-        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".presentation.ui.JokeActivity" />
+        <activity android:name=".presentation.ui.MainActivity" />
         <activity
-            android:name=".ui.SplashActivity"
-            android:noHistory="true">
+            android:name=".presentation.ui.SplashActivity"
+            android:noHistory="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
